@@ -4,7 +4,9 @@
   "description": "A cocktail menu website to practice React",
   "main": "App.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "parcel build src/index.html",
+    "start": "parcel src/index.html"
   },
   "author": "Francisco Joubert",
   "license": "ISC",
