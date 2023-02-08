@@ -1,0 +1,21 @@
+{
+  "name": "cocktail-menu-bar",
+  "version": "1.0.0",
+  "description": "A cocktail menu website to practice React",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Francisco Joubert",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.7.0",
+    "react-dom": "^18.2.0"
+  }
+}
