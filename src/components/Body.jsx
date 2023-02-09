@@ -7,6 +7,7 @@ import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import { cocktailAPIRoot } from "../config";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [cocktailList, setCocktailList] = useState([]);
@@ -52,7 +53,7 @@ const Body = () => {
         </Button>
       </Form>
       {cocktailList.length == 0 ? (
-        <p>Loading cocktails</p>
+        <Shimmer />
       ) : filteredCocktailList.length == 0 ? (
         <p>No cocktails with that name were found</p>
       ) : (
