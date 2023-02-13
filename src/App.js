@@ -8,7 +8,12 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
-import CocktailDetail from "./components/CocktailDetail"
+import CocktailDetail from "./components/CocktailDetail";
+import Category from "./pages/filters/Category";
+import Glass from "./pages/filters/Glass";
+import FirstLetter from "./pages/filters/FirstLetter";
+import Alcoholic from "./pages/filters/Alcoholic";
+import Ingredient from "./pages/filters/Ingredient";
 
 const AppLayout = () => (
   <>
@@ -38,8 +43,24 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/cocktail/:id",
-        element: <CocktailDetail />
-      }
+        element: <CocktailDetail />,
+      },
+      {
+        path: "/category/:categoryQuery",
+        element: <Category />,
+      },
+      {
+        path: "/glass/:glassQuery",
+        element: <Glass />,
+      },
+      {
+        path: "/ingredient/:ingredientQuery",
+        element: <Ingredient />,
+      },
+      {
+        path: "/alcoholic/:alcoholicQuery",
+        element: <Alcoholic />,
+      },
     ],
   },
 ]);
