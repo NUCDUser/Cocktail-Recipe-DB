@@ -11,11 +11,6 @@ function CocktailCard({ data }) {
             {data.strDrink}
           </Link>
         </Card.Title>
-        <Card.Text>{data.strInstructions}</Card.Text>
-      </Card.Body>
-      <Card.Body>
-        <h6>Category</h6>
-        <span>{data.strCategory}</span>
       </Card.Body>
     </Card>
   );

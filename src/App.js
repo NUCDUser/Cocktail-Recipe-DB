@@ -14,6 +14,7 @@ import Glass from "./pages/filters/Glass";
 import FirstLetter from "./pages/filters/FirstLetter";
 import Alcoholic from "./pages/filters/Alcoholic";
 import Ingredient from "./pages/filters/Ingredient";
+import Search from "./pages/Search";
 
 const AppLayout = () => (
   <>
@@ -42,7 +43,11 @@ const appRouter = createBrowserRouter([
         element: <Contact />,
       },
       {
-        path: "/cocktail/:id",
+        path: "/search",
+        element: <Search />,
+      },
+      {
+        path: "/cocktail/:cocktailID",
         element: <CocktailDetail />,
       },
       {
@@ -60,6 +65,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/alcoholic/:alcoholicQuery",
         element: <Alcoholic />,
+      },
+      {
+        path: "/alphabet/:firstLetterQuery",
+        element: <FirstLetter />,
       },
     ],
   },
