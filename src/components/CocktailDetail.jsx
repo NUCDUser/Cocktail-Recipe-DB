@@ -5,10 +5,19 @@ import Container from "react-bootstrap/Container";
 import { Image } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useCocktail } from "../utils/hooks";
+import { useState } from "react";
+import { addFavorite } from "../utils/favoritesSlice";
+import { useDispatch } from "react-redux";
 
 const CocktailDetail = () => {
   const { cocktailID } = useParams();
   const cocktailDetail = useCocktail(cocktailID);
+  const [isFavorited, setIsFavorited] = useState(false);
+  const dispatch = useDispatch();
+
+  const handleAddItem = (item) => {
+    dispatch(addFavorite(item));
+  };
 
   if (!cocktailDetail) return <h1>Loading...</h1>;
 
@@ -60,6 +69,17 @@ const CocktailDetail = () => {
                 );
               })}
             </ul>
+          </div>
+          <div>
+            <button
+              type="button"
+              className={`btn text-white ${
+                isFavorited ? "btn-outline-danger" : " btn-danger"
+              }`}
+              onClick={() => handleAddItem(cocktailDetail)}
+            >
+              {isFavorited ? "Remove from Favorites" : "Add to Favorite"}
+            </button>
           </div>
         </Col>
       </Row>
